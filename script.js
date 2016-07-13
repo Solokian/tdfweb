@@ -12,14 +12,14 @@ $(document).ready(function(){
 		    	var title_value = 'Tour de France ' + year;
 		    	$('#wiki').append(readData);
 				
-		    } 
-		}
+		     
+			}
 		    // var gagnant... if grimpeur.text = undefined, 
-		    // var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
-		    // var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
-		    // var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
-		    // // css bootstrap pour faire plus joli bootstrap.css ou bootstrap.style.css
-		    // $('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
+		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
+		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
+		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
+		    // css bootstrap pour faire plus joli bootstrap.css ou bootstrap.style.css
+		    $('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 		  };
 		  // mettre chaque vainqueur dans un div different
 		  //font awesome.io : mets des icones 
@@ -33,7 +33,7 @@ $(document).ready(function(){
 		    }, wikipediaHTMLResult);
 		  } callWikipediaAPI('Palmarès du Tour de France');
 		  
-
+		}
 	);
 
 })	
