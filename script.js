@@ -13,7 +13,7 @@ $(document).ready(function(){
 		    $('#wiki').append(readData);
 		    //boucle for i<10 (pas propre...), si "nowrap" : balancer une version modifiée de la ligne suivante qui inclus un .children de plus
 		    for (i = 0; i<10; i++){
-		    	if($("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children) == <span class="nowrap"> {
+		    	if(($("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children) == <span class="nowrap">) {
 		    		console.log("nowrap found");
 				}	
 		    } 
