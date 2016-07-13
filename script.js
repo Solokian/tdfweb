@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('#submit-button').click(function() {
 	  var year = $('#year').val();
 	  if (year < 1903 || year > 2015) {
-	  	$(#'result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
+	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
 	  } else {
 		  		var wikipediaHTMLResult = function(data) {
 		    var readData = $('<div>' + data.parse.text["*"] + '</div>');
