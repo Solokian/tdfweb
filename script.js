@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$('#submit-button').click(function() {
 	  var year = $('#year').val();
 	  // Add your code here
+	  console.log (year); //test
 	  var wikipediaHTMLResult = function(data) {
 	    var readData = $('<div>' + data.parse.text["*"] + '</div>');
 	    var title_value = 'Tour de France ' + year;
