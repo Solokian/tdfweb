@@ -7,12 +7,13 @@ $(document).ready(function(){
 	  if (year < 1903 || year > 2015) {
 	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
 	  } else {
-		  		var wikipediaHTMLResult = function(data) {
-		    var readData = $('<div>' + data.parse.text["*"] + '</div>');
-		    var title_value = 'Tour de France ' + year;
-		    $('#wiki').append(readData);
+		  	var wikipediaHTMLResult = function(data) {
+		    	var readData = $('<div>' + data.parse.text["*"] + '</div>');
+		    	var title_value = 'Tour de France ' + year;
+		    	$('#wiki').append(readData);
 				
 		    } 
+		}
 		    // var gagnant... if grimpeur.text = undefined, 
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
@@ -29,9 +30,9 @@ $(document).ready(function(){
 		      prop: 'text',
 		      uselang: 'fr'
 		    }, wikipediaHTMLResult);
-		  }
-		  callWikipediaAPI('Palmarès du Tour de France');
+		  } callWikipediaAPI('Palmarès du Tour de France');
 		  }
 
 	});
+
 })	
