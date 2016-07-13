@@ -20,7 +20,7 @@ $(document).ready(function(){
 		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
 		    // css bootstrap pour faire plus joli bootstrap.css ou bootstrap.style.css
 		    $('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
-		  // };
+		  };
 		  // mettre chaque vainqueur dans un div different
 		  //font awesome.io : mets des icones 
 
