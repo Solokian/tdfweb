@@ -31,8 +31,8 @@ $(document).ready(function(){
 		      uselang: 'fr'
 		    }, wikipediaHTMLResult);
 		  } callWikipediaAPI('Palmarès du Tour de France');
-		  }
+		  
 
-	});
+	);
 
 })	
