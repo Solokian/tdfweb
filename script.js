@@ -14,17 +14,37 @@ $(document).ready(function(){
 		     
 			
 		    // var gagnant... if grimpeur.text = undefined, 
+		    var grimpeur_flag = true;
+		    var sprinter_flag = true;
+
+
+
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
-
-
 		    if (year === "1959"){
 		    	console.log("boucle atteinte");
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
 		    }
+
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
+		    if (year < 1933){
+		    	grimpeur_flag = false;
+		    }
 		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
+
+		    if (year < 1953){
+		    	sprinter_flag = false;
+		    }
+
 		    // css bootstrap pour faire plus joli bootstrap.css ou bootstrap.style.css
-		    $('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
+		    if (grimpeur_flag && sprinter_flag){
+				$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
+
+		    } else if (grimpeur_flag && !sprinter_flag){
+				$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + " et le meilleur grimpeur "+grimpeur.text + ". Il n'y avait pas encore de meilleur sprinter cette année, le premier maillot vert datant de 1953.");
+		    } else {
+		    	$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ". Il n'y avait pas de meilleur grimpeur puisque le premier maillot à pois date de 1953. Idem pour le maillot vert de meilleur sprinter, qui date lui de 1933.");
+
+		    }
 		  };
 		  // mettre chaque vainqueur dans un div different
 		  //font awesome.io : mets des icones 
