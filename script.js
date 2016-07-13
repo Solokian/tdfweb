@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 		    if (year === "1959"){
 		    	console.log("boucle atteinte");
-		    	gagnant = $("[title='1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
+		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
 		    }
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
 		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
