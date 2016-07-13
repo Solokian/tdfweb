@@ -2,6 +2,7 @@ $(document).ready(function(){
 	
 
 	$('#submit-button').click(function() {
+	  $('#result').empty();
 	  var year = $('#year').val();
 	  if (year < 1903 || year > 2015) {
 	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
