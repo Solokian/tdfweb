@@ -11,9 +11,8 @@ $(document).ready(function(){
 		    	var readData = $('<div>' + data.parse.text["*"] + '</div>');
 		    	var title_value = 'Tour de France ' + year;
 		    	$('#wiki').append(readData);
-				
 		     
-			}
+			
 		    // var gagnant... if grimpeur.text = undefined, 
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
@@ -32,6 +31,7 @@ $(document).ready(function(){
 		      uselang: 'fr'
 		    }, wikipediaHTMLResult);
 		  } callWikipediaAPI('Palmarès du Tour de France');
+		  }
 		  
 		}
 	);
