@@ -15,8 +15,10 @@ $(document).ready(function(){
 			
 		    // var gagnant... if grimpeur.text = undefined, 
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
+		    console.log(gagnant);
+
+
 		    if (gagnant.text == null){
-		    	console.log(gagnant);
 		    	gagnant = gagnant.parentElement.children[0].children[1];
 		    }
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
