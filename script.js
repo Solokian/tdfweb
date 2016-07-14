@@ -5,7 +5,7 @@ $(document).ready(function(){
 	  $('#result').empty();
 	  var year = $('#year').val();
 	  if (year < 1903 || year > 2015) {
-	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
+	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et l'année du dernier tour de France");
 	  } else if (year === 1915 || year === 1916 || year === 1917 || year === 1918 ||year === 1940 || year === 1941 || year === 1942 || year === 1943 || year === 1944 || year === 1945 || year === 1946){
 	  	$('#result').append("Entre 1915 et 1918, puis entre 1940 et 1946, les deux guerres mondiales ont malheureusement empêché la tenue du Tour de France.");
 	  } else {
@@ -15,7 +15,7 @@ $(document).ready(function(){
 		    	$('#wiki').append(readData);
 		     
 			
-		    // var gagnant... if grimpeur.text = undefined, 
+		    //Pour pouvoir aiguiller l'affichage après
 		    var gagnant_flag = true;
 		    var grimpeur_flag = true;
 		    var sprinter_flag = true;
