@@ -8,9 +8,10 @@ $(document).ready(function(){
 	  var year = $('#year').val();
 
 	  if (year < 1903 || year > 2015) {
-	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et l'année du dernier tour de France");
+	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
 
 	  } else if ((year >1914 && year <1919) || (year >1939 || year < 1947)){
+	  	console.log ("else if entré, year= " +year);
 	  	$('#result').append("Entre 1915 et 1918, puis entre 1940 et 1946, les deux guerres mondiales ont malheureusement empêché la tenue du Tour de France.");
 
 	  } else {
