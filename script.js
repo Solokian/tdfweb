@@ -28,6 +28,7 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    var sprinter_flag = true;
 
 		    if (year == 1999 || year == 2000 || year == 2001 || year == 2002 || year == 2003 || year == 2004 || year == 2005){ // exception pour les années où le titre a été retiré à Armstrong
+		    	console.log("if Armstrong");
 		    	gagnant_flag = false; 
 	  		}
 
