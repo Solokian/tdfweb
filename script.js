@@ -10,13 +10,12 @@ $(document).ready(function(){
 	  if (year < 1903 || year > 2015) {
 	  	$('#result').append("L'année entrée doit être comprise entre 1903 (première année du Tour) et 2015");
 
-	  } 
-	  // else if ((year >1914 && year <1919) || (year >1939 || year < 1947)){
-	  // 	console.log ("else if entré, year= " +year);
-	  // 	$('#result').append("Entre 1915 et 1918, puis entre 1940 et 1946, les deux guerres mondiales ont malheureusement empêché la tenue du Tour de France.");
+	  } else if (year == 1915 || year == 1916 || year == 1917 || year == 1918 || year == 1940 || year == 1941 || year == 1942 || year == 1943 || year == 1944 || year == 1945 || year == 1946){
+	  	// (year >1914 && year <1919) || (year >1939 || year < 1947)
+	  	console.log ("else if entré, year= " +year);
+	  	$('#result').append("Entre 1915 et 1918, puis entre 1940 et 1946, les deux guerres mondiales ont malheureusement empêché la tenue du Tour de France.");
 
-	  // } 
-	  else {
+	  } else {
 		  	var wikipediaHTMLResult = function(data) {
 		    	var readData = $('<div>' + data.parse.text["*"] + '</div>');
 		    	var title_value = 'Tour de France ' + year;
@@ -34,7 +33,7 @@ $(document).ready(function(){
 
 
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
-		    if (year === "1959"){ // exception : le nom du gagnan est sous une balise (nowrap) supplémentaire cette année là
+		    if (year === "1959"){ // exception : le nom du gagnant est sous une balise (nowrap) supplémentaire cette année là
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
 		    }
 
@@ -48,7 +47,6 @@ $(document).ready(function(){
 		    	sprinter_flag = false;
 		    }
 
-		    // css bootstrap pour faire plus joli bootstrap.css ou bootstrap.style.css
 		    if (grimpeur_flag && sprinter_flag && grimpeur_flag){
 				$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 
