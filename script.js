@@ -31,26 +31,34 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    	gagnant_flag = false; 
 	  		}
 
-
+	  		//gestion des exceptions gagnants
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
-		    if (year === "1959"){ // exception : le nom du gagnant est sous une balise (nowrap) supplémentaire cette année là
+		    if (year == 1959){ // exception : le nom du gagnant est sous une balise (nowrap) supplémentaire cette année là
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
 		    }
 
+		    //gestion des exceptions grimpeurs
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
+		    if (year == 1954){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
+		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[6].children[0].children[1];
+		    }
 		    if (year < 1933){ // si le titre de grimpeur n'existait pas encore cette année
 		    	grimpeur_flag = false;
 		    }
-		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
 
+		    //gestion des exceptions sprinter
+		    var sprinter = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[7].children[1];
 		    if (year < 1953){ // si le titre de sprinter n'existait pas encore cette année
 		    	sprinter_flag = false;
+		    }
+		    if (year == 1991){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
+		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[7].children[0].children[1];
 		    }
 
 		    if (grimpeur_flag && sprinter_flag && grimpeur_flag){ // si les trois titres existaient cette année
 				$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 
-		    } else if (grimpeur_flag && sprinter_flag && !grimpeur_flag){ // si les trois titres existaient cette année, mais année Armstrong
+		    } else if (grimpeur_flag && sprinter_flag && !gagnant_flag){ // si les trois titres existaient cette année, mais année Armstrong
 				$('#result').append("En " +year+" le titre de gagnant du Tour de France de Lance Armstrong a été révoqué par l'union cycliste internationale pour dopage, le meilleur grimpeur était  "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 
 		    } else if (grimpeur_flag && !sprinter_flag){ // si le titre de grimpeur existait cette année là, mais pas celui de sprinter
