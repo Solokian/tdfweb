@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	
 
-	$('#submit-button').click(function() {
+	$('#submit-button').click(function(e) {
+	  e.preventDefault();
 	  $('#result').empty();
-	  
+
 	  var year = $('#year').val();
 
 	  if (year < 1903 || year > 2015) {
