@@ -39,7 +39,7 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 
 		    //gestion des exceptions grimpeurs
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
-		    if (year == 1954){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
+		    if (false){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[6].children[0].children[1];
 		    }
 		    if (year < 1933){ // si le titre de grimpeur n'existait pas encore cette année
