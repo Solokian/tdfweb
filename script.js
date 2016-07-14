@@ -43,7 +43,7 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    var grimpeur = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[6].children[1];
 		    if (year == 1954){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
 		    	console.log(" if 1954");
-		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[6].children[0].children[1];
+		    	grimpeur = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[6].children[0].children[1];
 		    }
 		    if (year < 1933){ // si le titre de grimpeur n'existait pas encore cette année
 		    	grimpeur_flag = false;
@@ -55,7 +55,7 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    	sprinter_flag = false;
 		    }
 		    if (year == 1991){ // exception : le nom du grimpeur est sous une balise (nowrap) supplémentaire cette année là
-		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[7].children[0].children[1];
+		    	sprinter = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[7].children[0].children[1];
 		    }
 
 		    if (gagnant_flag && sprinter_flag && grimpeur_flag){ // si les trois titres existaient cette année
