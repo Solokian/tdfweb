@@ -27,12 +27,13 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    var grimpeur_flag = true;
 		    var sprinter_flag = true;
 
+
+	  		//gestion des exceptions gagnants
 		    if (year == 1999 || year == 2000 || year == 2001 || year == 2002 || year == 2003 || year == 2004 || year == 2005){ // exception pour les années où le titre a été retiré à Armstrong
 		    	console.log("if Armstrong");
 		    	gagnant_flag = false; 
 	  		}
 
-	  		//gestion des exceptions gagnants
 		    var gagnant = $("[title='" + title_value + "']")[0].parentElement.parentElement.children[1].children[1];
 		    if (year == 1959){ // exception : le nom du gagnant est sous une balise (nowrap) supplémentaire cette année là
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[1].children[0].children[1];
@@ -57,10 +58,10 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 		    	gagnant = $("[title='Tour de France 1959']")[0].parentElement.parentElement.children[7].children[0].children[1];
 		    }
 
-		    if (grimpeur_flag && sprinter_flag && grimpeur_flag){ // si les trois titres existaient cette année
+		    if (gagnant_flag && sprinter_flag && grimpeur_flag){ // si les trois titres existaient cette année
 				$('#result').append("En " +year+" le gagnant du Tour de France était " + gagnant.text + ", le meilleur grimpeur "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 
-		    } else if (grimpeur_flag && sprinter_flag && !gagnant_flag){ // si les trois titres existaient cette année, mais année Armstrong
+		    } else if (!gagnant_flag && sprinter_flag && grimpeur_flag){ // si les trois titres existaient cette année, mais année Armstrong
 				$('#result').append("En " +year+" le titre de gagnant du Tour de France de Lance Armstrong a été révoqué par l'union cycliste internationale pour dopage, le meilleur grimpeur était  "+grimpeur.text + " et le meilleur sprinter "+sprinter.text +".");
 
 		    } else if (grimpeur_flag && !sprinter_flag){ // si le titre de grimpeur existait cette année là, mais pas celui de sprinter
@@ -72,8 +73,6 @@ $(document).ready(function(){ //Attendre que la page soit chargée
 
 		    }
 		  };
-		  // mettre chaque vainqueur dans un div different
-		  //font awesome.io : mets des icones 
 
 		  function callWikipediaAPI(wikipediaPage) {
 		    // http://www.mediawiki.org/wiki/API:Parsing_wikitext#parse
